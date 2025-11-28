@@ -1,0 +1,73 @@
+Welcome to Node.js v24.11.1.
+Type ".help" for more information.
+> const { EmbedBuilder } = require("discord.js");
+Uncaught Error: Cannot find module 'discord.js'
+Require stack:
+- <repl>
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1421:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1064:22)
+    at Module._load (node:internal/modules/cjs/loader:1227:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:245:24)
+    at Module.require (node:internal/modules/cjs/loader:1504:12)
+    at require (node:internal/modules/helpers:152:16) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '<repl>' ]
+}
+>
+> // Lista de brainrots válidos
+undefined
+> const brainrots = [
+|     "esoksekolah", "loscombinasionas", "lagrandecombinasion", "loshotspositos",
+|     "losbros", "ketupatkepat", "nuclearodinossauro", "tralaledon",
+|     "ketchuruandmusturu", "lasupremecombinasion", "lassis", "tacoritabicicleta",
+|     "laextinctgrande", "lostacoritas", "celularciniviciosini", "losprimos",
+|     "spaghettitualetti", "tictacsahur", "garamaandmadundung", "dragoncannelloni",
+|     "chillinchili", "eviledon", "tangtangkelentang", "moneymoneypuggy",
+|     "lassecretcombinasion", "burguroandfryuro", "strawberryelephant",
+|     "laspookygrande", "mieteteirabicicleteira", "chipsoandqueso",
+|     "spookyandpumpky", "meowl", "lacasa", "headless"
+| ];
+undefined
+>
+> module.exports = {
+|     name: "price",
+|     description: "Calcula precios usando la fórmula de brainrots.",
+|     execute(message, args) {
+|
+|         const brainrot = args[0]?.toLowerCase();
+|         const valor = parseFloat(args[1]);
+|
+|         if (!brainrot || isNaN(valor)) {
+|             return message.reply("Usá: `,price {brainrot} {valor}`");
+|         }
+|
+|         if (!brainrots.includes(brainrot)) {
+|             return message.reply("Ese brainrot no existe rey.");
+|         }
+|
+|         // Fórmula universal
+|         const formula = "(M - 42.5) × 0.03 + 8";
+|         const operacion = `(${valor} - 42.5) × 0.03 + 8`;
+|         const resultado = (valor - 42.5) * 0.03 + 8;
+|
+|         const embed = new EmbedBuilder()
+|             .setTitle(`Calculadora de ${brainrot}`)
+|             .setDescription("Precio calculado automáticamente")
+|             .addFields(
+|                 { name: "Fórmula", value: formula },
+|                 { name: "Operación", value: operacion },
+|                 { name: "Resultado", value: `$${resultado.toFixed(2)}` }
+|             )
+|             .setColor("#5865F2");
+|
+|         message.reply({ embeds: [embed] });
+|     }
+| };
+{
+  name: 'price',
+  description: 'Calcula precios usando la fórmula de brainrots.',
+  execute: [Function: execute]
+}
+>

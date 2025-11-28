@@ -1,3 +1,4 @@
+const keep_alive = require('./keep_alive.js');
 require('dotenv').config();
 const { 
     Client, 
@@ -523,3 +524,4 @@ client.on("messageCreate", async (msg) => {
 
 // ----------------------------------------------------------
 client.login(process.env.TOKEN);
+
